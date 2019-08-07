@@ -1,0 +1,12 @@
+import wollok.game.*
+
+object wollok {
+	var property position = game.origin()
+}
+
+program ejemplo{
+    game.addVisualCharacter(wollok)
+	keyboard.space().onPressDo{game.say(wollok,wollok.position().toString())}
+	keyboard.enter().onPressDo{wollok.position(game.center())}
+	game.start()	
+}
